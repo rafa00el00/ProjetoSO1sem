@@ -1,0 +1,31 @@
+<!--lista de processos-->
+<div class="panel panel-sucess col-md-4 col-md-offset-2">
+  <div class="panel-heading"> Processos: </div>
+  <div class="panel-body">
+    <ul>
+      <li *ngFor="let p of processos.getAll()">
+        <app-processo-view [processo]=p></app-processo-view>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--Adicionar novo Processo-->
+<form #x="ngForm" (ngSubmit)="adicionarProcesso(x)" class="panel panel-sucess col-md-4">
+  <div class="panel-heading">
+    Novo Processo
+  </div>
+  <div class="panel-body">
+    <div class="form-group">
+      <label>Nome: </label>
+      <input class="form-control" type="text" name="nome" ngModel />
+    </div>
+    <div class="form-group">
+      <label>Tempo: </label>
+      <input class="form-control" type="number" name="tamanho" ngModel />
+    </div>
+  </div>
+  <div class="">
+    <button type="submit" class="btn btn-primary pull-right">adicionar</button>
+  </div>
+</form>
